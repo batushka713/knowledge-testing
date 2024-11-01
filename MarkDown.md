@@ -93,6 +93,43 @@ git commit --amend -m "Updated message for the previous commit"
 ```sh
 git branch -d <branch_name>
 ```
+## Команды для создания ssh Ключей и агентов
+
+"Для github индкс при создании ключа должен быть ed25519"
+
+Команда для создания ssh ключа
+```sh
+ssh-keygen -t ed25519  -C <Если нужен коментариий, принличие нескольких ключей>
+```
+Команда для создания Ssh Агента 
+```sh
+evel "$(ssh-agent -s)"
+```
+Команда для привязки агента к ключу
+```sh
+ssh-add ~/.ssh/id_ed25519
+```
+[Информация по добовлению ключей Ssh](https://stackoverflow.com/questions/35901982/how-do-i-add-an-ssh-key-in-gitlab "Ссылка на статью Gitlab" )
+
+[подробная статья про Ssh](https://best-manual.ru/blog/diy/2022-11-21-nastrojka-dostupa-po-ssh-klyuchu-v-github-v-windows-i-macos.html)
+
+## Команды для работы с удаленными репазиториями
+Команда для подключение удоленного репазитория к локальному 
+```sh
+git remote add origin<Ssh код удоленного репазитория>
+```
+команда для получения файлов с удаленного репазитория
+```sh
+git push <Ssh код удоленного репазитория>
+```
+Или
+```sh
+git clone <Ssh код удоленного репазитория>
+```
+Команда для отправки файлов на удаленный репазиторий
+```sh
+git push
+```
 ## Оформление текста в MarkDown
 Чтобы текст начинался с новой строки нужно два отступа
 
